@@ -11,10 +11,12 @@ a { text-decoration:none; color:var(--fg); }
 header { position:sticky; top:0; z-index:10; display:flex; justify-content:space-between; align-items:center; padding:16px; background:rgba(0,0,0,.85); }
 header img { height:50px; object-fit:contain; }
 nav a { margin-left:20px; font-weight:600; letter-spacing:.08em; }
-.hero { position:relative; min-height:80vh; display:grid; place-items:center; text-align:center; overflow:hidden; }
-#heroVideo { position:absolute; top:50%; left:50%; min-width:100%; min-height:100%; width:auto; height:auto; transform:translate(-50%, -50%); object-fit:cover; z-index:0; }
-.hero-content { position:relative; z-index:1; }
-.hero-content img { max-width:520px; width:80%; margin-bottom:24px; }
+.hero {
+  min-height:80vh; display:grid; place-items:center; text-align:center;
+  background: radial-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+              url('images/background.jpg') center/cover no-repeat;
+}
+.hero img { max-width:520px; width:80%; margin-bottom:24px; position:relative; z-index:1; }
 .btn { display:inline-block; padding:14px 26px; border:2px solid var(--fg); font-weight:700; letter-spacing:.12em; margin:8px; transition:.2s; }
 .btn:hover { background:var(--fg); color:#000; }
 section { padding:80px 24px; max-width:1200px; margin:0 auto; }
@@ -38,16 +40,10 @@ footer { border-top:1px solid #111; padding:32px 24px; text-align:center; color:
 
 <main>
 <section class="hero">
-<video autoplay muted loop playsinline id="heroVideo">
-<source src="video.mp4" type="video/mp4">
-Your browser does not support HTML5 video.
-</video>
-<div class="hero-content">
 <img src="images/logo.png" alt="ENOFFMUS Logo">
 <div>
 <a class="btn" href="#music">LISTEN</a>
 <a class="btn" href="https://enoffmus-ptp-shop.fourthwall.com/" target="_blank">MERCH</a>
-</div>
 </div>
 </section>
 
@@ -55,7 +51,12 @@ Your browser does not support HTML5 video.
 <h2>VIDEOS</h2>
 <div class="grid grid-2">
 <div class="card">
-<iframe width="100%" height="315" src="https://www.youtube.com/embed?listType=user_uploads&list=Enoffmus" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="315" 
+        src="https://www.youtube.com/embed/oVmueQscbus" 
+        title="ENOFFMUS Video" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+</iframe>
 </div>
 <div class="card">
 <p>Follow ENOFFMUS on Instagram for updates, clips, and visuals.</p>
